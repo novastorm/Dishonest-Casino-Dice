@@ -1,0 +1,32 @@
+{
+	"start" : {
+		"transition" : {
+			"rainy" : "1"
+			, "sunny" : "1"
+		}
+	}
+	, "states" : [
+		"rainy"
+		, "sunny"
+	]
+	, "rainy" : {
+		"transition" : {
+			"rainy" : "6"
+			, "sunny" : "4"
+		}
+		, "emission" : {
+			"happy" : "4"
+			, "grumpy" : "6"
+		}
+	}
+	, "sunny" : {
+		"transition" : {
+			"rainy" : "2"
+			, "sunny" : "8"
+		}
+		, "emission" : {
+			"happy" : "9"
+			, "grumpy" : "1"
+		}
+	}
+}

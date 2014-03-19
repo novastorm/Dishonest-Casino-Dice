@@ -1,0 +1,402 @@
+[
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "3",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "2",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "3",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "1",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "3",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "2",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "2",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "fair"
+   },
+   {
+      "emission" : "1",
+      "state" : "fair"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   }
+]
