@@ -1,5 +1,3 @@
-Two-Page Progress report
-
 * Title of Project
 * Achievements
 
@@ -40,16 +38,24 @@ Markov chain (discrete-time Markov chain)
 
 Markov chain generator
 - generates the states with emissions.
+  generator outputs states from the input markov chain. output includes state and emission data for comparison.
 - extracts observations from from states data.
+  generator extracts from the input state data and outputs the observation list for solver processing.
 
 
 Decoding using Viterbi algorithm
 - log probability addition in place of floating point multiplication
+  determines most probable state from the input observations. Uses log probability to provide better precision and additionally uses efficient floating point addition.
 
 
 Notable observations
 - viterbi algorithm implicit pruning
+  The viterbi algorithm performes implicit pruning of unlikely possibilities. Logs the most likely paths as it processes the observations.
+
 - log probabilities
+  Use the natural logarithm of the probabilities.
+  Provides more precise calculation of the miniscule numbers involved in calculating the probabilities.
+  Floating point addition is more efficient than multiplication.
 
 
 possible additional explorations
