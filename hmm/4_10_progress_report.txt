@@ -1,0 +1,20 @@
+Two-Page Progress report
+
+* Title of Project
+* Achievements
+
+The Dishonest Casino
+
+An Exploration of Hidden Markov Models
+
+
+Markov chain generator
+Viterbi algorithm
+
+Notable observations
+- viterbi algorithm implicit pruning
+- log probabilities
+
+possible additional explorations
+- explore viterbi algorithm k factor
+- 
