@@ -7,14 +7,54 @@ The Dishonest Casino
 
 An Exploration of Hidden Markov Models
 
+hidden markov model
+
+* A hidden Markov model (HMM) is a statistical Markov model in which the system being modeled is assumed to be a Markov process with unobserved (hidden) states. A HMM can be considered the simplest dynamic Bayesian network. The mathematics behind the HMM was developed by L. E. Baum and coworkers.
+
+* A HMM can be considered the simplest dynamic Bayesian network. A Dynamic Bayesian Network (DBN) is a Bayesian Network which relates variables to each other over adjacent time steps.
+:: http://en.wikipedia.org/wiki/Hidden_Markov_model
+
+
+markov model
+
+* In probability theory, a Markov model is a stochastic model that assumes the Markov property. A stochastic model models a process where the state depends on previous states in a non-deterministic way.
+:: http://en.wikipedia.org/wiki/Markov_model
+
+
+stochastic
+
+* In probability theory, a stochastic process, or sometimes random process is a collection of random variables; this is often used to represent the evolution of some random value, or system, over time.
+:: http://en.wikipedia.org/wiki/Stochastic_process
+
+
+markov property
+* In probability theory and statistics, the term Markov property refers to the memoryless property of a stochastic process. It is named after the Russian mathematician Andrey Markov.
+* A stochastic process has the Markov property if the conditional probability distribution of future states of the process (conditional on both past and present values) depends only upon the present state, not on the sequence of events that preceded it.
+:: http://en.wikipedia.org/wiki/Markov_property
+
+
+Markov chain (discrete-time Markov chain)
+
+* A Markov chain is a stochastic process with the Markov property.
+
 
 Markov chain generator
-Viterbi algorithm
+- generates the states with emissions.
+- extracts observations from from states data.
+
+
+Decoding using Viterbi algorithm
+- log probability addition in place of floating point multiplication
+
 
 Notable observations
 - viterbi algorithm implicit pruning
 - log probabilities
 
+
 possible additional explorations
-- explore viterbi algorithm k factor
-- 
+- explore evaluating
+- explore learning
+- continuous-time Markov chain
+- Bayesian network
+* A Dynamic Bayesian Network (DBN) is a Bayesian Network which relates variables to each other over adjacent time steps.
