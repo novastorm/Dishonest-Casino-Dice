@@ -1,0 +1,42 @@
+[
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "4",
+      "state" : "fair"
+   },
+   {
+      "emission" : "3",
+      "state" : "fair"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "6",
+      "state" : "loaded"
+   },
+   {
+      "emission" : "5",
+      "state" : "loaded"
+   }
+]

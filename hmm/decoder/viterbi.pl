@@ -15,26 +15,26 @@ use List::Util qw(reduce);
 
 my $help;
 my $debug;
-my $markov_model_file;
+my $markov_chain_file;
 my $observations_file;
 
 GetOptions(
 	"help|h" => \$help
 	, "debug" => \$debug
-	, "markov-model=s" => \$markov_model_file
+	, "markov-chain=s" => \$markov_chain_file
 	, "observations=s" => \$observations_file
 	);
 
 my $SYNOPSIS = <<EOF;
-$0 --markov-model[=| ]FILE --observations[=| ]FILE [-h]
+$0 --markov-chain[=| ]FILE --observations[=| ]FILE [-h]
 EOF
 
 my $HELP = <<EOF;
 $SYNOPSIS
-    Viterbi prediction for the markov model and observations.
+    Viterbi prediction for the markov chain and observations.
 
-    --markov-model[=| ]FILE
-        Markov model data filename.
+    --markov-chain[=| ]FILE
+        Markov chain data filename.
 
     --observations[=| ]FILE
         Oservations data filename.
@@ -47,7 +47,7 @@ EOF
 die $HELP if $help;
 
 die $SYNOPSIS
-	if (!($markov_model_file and $observations_file));
+	if (!($markov_chain_file and $observations_file));
 
 
 
@@ -55,8 +55,8 @@ die $SYNOPSIS
 # Main
 ##############################################################################
 
-my $markov_model = import_markov_model($markov_model_file);
-my $training_data = get_training_data($markov_model);
+my $markov_chain = import_markov_chain($markov_chain_file);
+my $training_data = get_training_data($markov_chain);
 my $observation_data = import_observations_data($observations_file);
 
 print to_json viterbi(
@@ -70,7 +70,7 @@ print to_json viterbi(
 
 ##############################################################################
 #
-# Import Markov Model
+# Import Markov chain
 #
 ##############################################################################
 
@@ -86,9 +86,10 @@ sub viterbi
 	my $probability;
 	my $state;
 	my $new_path;
+	my $states = [grep { $_ ne 'start' && $_ ne 'states' } keys %{$training_data}];
 
 	# initialize base cases
-	for my $state (@{$training_data->{'states'}}) {
+	for my $state (@{$states}) {
 		if ($debug) {
 			printf "%6s: V[%-11g] -> T[%6s]P[%-4.2g] O[%s]P[%-8g] TP[%-11g]\n"
 				, "start"
@@ -129,14 +130,14 @@ sub viterbi
 				map {
 					[$viterbi->[$index]{$_}, $_]
 				}
-				@{$training_data->{'states'}}
+				@{$states}
 			};
 		print "[$probability][$state]\n" . to_json($path->{$state}, {pretty => 1}) . "\n\n";
 	}
 
 	for my $i (1 .. scalar @{$observations} - 1) {
 		$new_path = {};
-		for my $next_state (@{$training_data->{'states'}}) {
+		for my $next_state (@{$states}) {
 			($probability, $state) = @{
 				reduce {
 					$a->[0] > $b->[0] ? $a : $b
@@ -162,7 +163,7 @@ sub viterbi
 						, $_
 					]
 				}
-				@{$training_data->{'states'}}
+				@{$states}
 			};
 			$viterbi->[$i]{$next_state} = $probability;
 			$new_path->{$next_state} = [@{$path->{$state}}, ($next_state)];
@@ -180,7 +181,7 @@ sub viterbi
 					map {
 						[$viterbi->[$index]{$_}, $_]
 					}
-					@{$training_data->{'states'}}
+					@{$states}
 				};
 			print to_json $path, {pretty => 1};
 			print "[$probability][$state]\n"
@@ -199,7 +200,7 @@ sub viterbi
 			map {
 				[$viterbi->[$index]{$_}, $_]
 			}
-			@{$training_data->{'states'}}
+			@{$states}
 		};
 
 	return {
@@ -216,19 +217,19 @@ sub viterbi
 #
 ##############################################################################
 
-sub import_markov_model {
+sub import_markov_chain {
 	my $filename = shift;
-	my $markov_model;
-	my $training_data;
+	my $markov_chain;
+	# my $training_data;
 
 	open(FH, "<", $filename) or die "< $filename: cannot open $!";
 
 	local $/;
 	my $input = <FH>;
 
-	$markov_model = from_json($input);
+	$markov_chain = from_json($input);
 
-	return $markov_model;
+	return $markov_chain;
 }
 
 
@@ -241,21 +242,21 @@ sub import_markov_model {
 
 sub get_training_data
 {
-	my $markov_model = shift;
+	my $markov_chain = shift;
 	my $training_data = {};
 
-	for my $state (keys %{$markov_model}) {
+	for my $state (keys %{$markov_chain}) {
 		$training_data->{$state} = ();
 		if ($state eq 'states') {
-			for my $new_state (@{$markov_model->{$state}}) {
+			for my $new_state (@{$markov_chain->{$state}}) {
 				push @{$training_data->{$state}}, $new_state;
 			}
 		}
 		else {
-			for my $new_state (keys %{$markov_model->{$state}}) {
-				my $total = reduce { $a + $b } values $markov_model->{$state}{$new_state};
-				for my $value (keys %{$markov_model->{$state}{$new_state}}) {
-					my $probability = (log $markov_model->{$state}{$new_state}{$value})
+			for my $new_state (keys %{$markov_chain->{$state}}) {
+				my $total = reduce { $a + $b } values $markov_chain->{$state}{$new_state};
+				for my $value (keys %{$markov_chain->{$state}{$new_state}}) {
+					my $probability = (log $markov_chain->{$state}{$new_state}{$value})
 						- (log $total);
 					$training_data->{$state}{$new_state}{$value} = $probability;
 				}
