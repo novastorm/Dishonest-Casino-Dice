@@ -5,10 +5,6 @@
 			, "loaded" : "1"
 		}
 	}
-	, "states" : [
-		"fair"
-		, "loaded"
-	]
 	, "fair" : {
 		"transition" : {
 			"fair" : "95"

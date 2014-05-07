@@ -4,7 +4,7 @@
 #
 # Description
 #
-# Generate a sequence of states from a Markov model.
+# Generate a sequence of states from a Markov chain.
 #
 
 use Data::Dumper;
@@ -13,7 +13,7 @@ use JSON;
 
 my $help;
 my $verbose;
-my $markov_model_file;
+my $markov_chain_file;
 my $state_table_file;
 my $count;
 my $default_count = 3;
@@ -21,24 +21,24 @@ my $default_count = 3;
 GetOptions(
 	"help|h" => \$help
 	, "verbose" => \$verbose
-	, "markov-model=s" => \$markov_model_file
+	, "markov-chain=s" => \$markov_chain_file
 	, "state-table=s" => \$state_table_file
 	, "count=i" => \$count
 	);
 
 my $SYNOPSIS = <<EOF;
-$0 --markov-model xor --state-table FILE [--verbose] [-h]
+$0 --markov-chain xor --state-table FILE [--verbose] [-h]
 EOF
 
 my $HELP = <<EOF;
 $SYNOPSIS
-    Generate emissions for given markov model.
+    Generate emissions for given markov chain.
 
 
-    One of either but not both of --markov-model or --state-table must be specified.
+    One of either but not both of --markov-chain or --state-table must be specified.
 
-    --markov-model[=| ]FILE
-        Markov model data filename.
+    --markov-chain[=| ]FILE
+        Markov chain data filename.
 
     --state-table[=| ]FILE
         State table data filename.
@@ -57,23 +57,23 @@ EOF
 die $HELP if $help;
 
 die $SYNOPSIS
-	if (!($markov_model_file xor $state_table_file));
+	if (!($markov_chain_file xor $state_table_file));
 
 
 ##############################################################################
 # main
 ##############################################################################
 
-# print "MM [$markov_model_file]\n";
+# print "MM [$markov_chain_file]\n";
 
-my $markov_model;
+my $markov_chain;
 my $states;
 
-if ($markov_model_file) {
-	$markov_model = import_markov_model($markov_model_file);
+if ($markov_chain_file) {
+	$markov_chain = import_markov_chain($markov_chain_file);
 	$count ||= $default_count;
 	$states =  generate_states(
-		'markov_model' => $markov_model
+		'markov_chain' => $markov_chain
 		, 'count' => $count
 		);
 }
@@ -105,18 +105,18 @@ else {
 #
 ##############################################################################
 
-sub import_markov_model {
+sub import_markov_chain {
 	my $filename = shift;
-	my $markov_model;
+	my $markov_chain;
 
 	open(FH, "<", $filename) or die "< $filename: cannot open $!";
 
 	local $/;
 	my $input = <FH>;
 
-	$markov_model = from_json($input);
+	$markov_chain = from_json($input);
 
-	return $markov_model;
+	return $markov_chain;
 }
 
 
@@ -211,16 +211,16 @@ sub _get_value
 sub generate_states
 {
 	my %p = @_;
-	my $markov_model = $p{'markov_model'};
-	my $state = $p{'state'} ||= get_transition($markov_model->{'start'});
+	my $markov_chain = $p{'markov_chain'};
+	my $state = $p{'state'} ||= get_transition($markov_chain->{'start'});
 	my $count = $p{'count'};
 	my $result = [];
 
 	foreach (1 .. $count) {
-		$state = get_transition($markov_model->{$state});
+		$state = get_transition($markov_chain->{$state});
 		push @{$result}, {
 			'state' => $state
-			, 'emission' => get_emission($markov_model->{$state})
+			, 'emission' => get_emission($markov_chain->{$state})
 		};
 	}
 
