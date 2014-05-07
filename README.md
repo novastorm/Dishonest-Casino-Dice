@@ -11,7 +11,7 @@ CS155
     hmm/generator/markov_chain.pl
 
 #### Viterbi Algorithm Solver
-    hmm/solver/viterbi.pl
+    hmm/decoder/viterbi.pl
 
 ---
 
