@@ -5,14 +5,10 @@
 			, "loaded" : "1"
 		}
 	}
-	, "states" : [
-		"fair"
-		, "loaded"
-	]
 	, "fair" : {
 		"transition" : {
-			"fair" : "95"
-			, "loaded" : "5"
+			"fair" : "99"
+			, "loaded" : "1"
 		}
 		, "emission" : {
 			"1" : "1"
@@ -25,8 +21,8 @@
 	}
 	, "loaded" : {
 		"transition" : {
-			"fair" : "1"
-			, "loaded" : "9"
+			"fair" : "20"
+			, "loaded" : "80"
 		}
 		, "emission" : {
 			"1" : "1"
