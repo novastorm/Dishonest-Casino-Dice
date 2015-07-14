@@ -1,4 +1,4 @@
-CS155
+HMM Fair v Loaded Coin
 =====
 
 ## Hidden Markov Model experiments
