@@ -1,5 +1,8 @@
-HMM Fair v Loaded Coin
+Dishonest Casion Dice
 =====
+
+Determine from the observed outcomes when the die is a fair die or loaded.
+
 
 ## Hidden Markov Model experiments
 
