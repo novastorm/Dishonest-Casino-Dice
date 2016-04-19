@@ -1,5 +1,8 @@
-CS155
+Dishonest Casino - Dice
 =====
+
+Determine from the observed outcomes when the die is a fair die or loaded.
+
 
 ## Hidden Markov Model experiments
 
